@@ -1,4 +1,13 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.EntityFrameworkCore;
+using RehberListesiWEBAPI.Models.Context;
+
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<Context>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("WebApiDatabase"));
+});
 
 // Add services to the container.
 
