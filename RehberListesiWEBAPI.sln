@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RehberListesiWEBAPI", "RehberListesiWEBAPI\RehberListesiWEBAPI.csproj", "{5BB0214A-9BBC-480C-B82F-2794C43560B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BB0214A-9BBC-480C-B82F-2794C43560B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB0214A-9BBC-480C-B82F-2794C43560B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB0214A-9BBC-480C-B82F-2794C43560B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB0214A-9BBC-480C-B82F-2794C43560B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43FF309D-5E5C-4124-BE28-F2C89F828208}
+	EndGlobalSection
+EndGlobal
