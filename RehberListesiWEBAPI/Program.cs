@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RehberListesiWEBAPI.Models.Context;
-
+using RehberListesiWEBAPI.Models.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,7 @@ builder.Services.AddDbContext<Context>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("WebApiDatabase"));
 });
-
+builder.Services.AddAutoMapper(typeof(MapProfile).Assembly);
 // Add services to the container.
 
 builder.Services.AddControllers();

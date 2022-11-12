@@ -1,15 +1,18 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace RehberListesiWEBAPI.Models
 {
 	public class Rehber
 	{
-		public int ID { get; set; }
+		[Key]
+		public int RehberID { get; set; }
 		public string Adi { get; set; }
 		public string Soyadi { get; set; }
 		public string Firma { get; set; }
 
 		//İletişim Bilgileri collection ile bağlantı sağlanması
-		ICollection<IletisimBilgileri> IletisimBilgileris { get; set; }
+		public ICollection<IletisimBilgileri> IletisimBilgileris { get; set; }
 	}
 }
 

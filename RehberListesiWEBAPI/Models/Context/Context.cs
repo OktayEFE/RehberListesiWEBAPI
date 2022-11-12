@@ -5,7 +5,6 @@ namespace RehberListesiWEBAPI.Models.Context
 {
 	public class Context : DbContext
 	{
-		
 		public Context(DbContextOptions options) : base(options)
 		{
 
@@ -13,6 +12,9 @@ namespace RehberListesiWEBAPI.Models.Context
 
 		public DbSet<Rehber> Rehbers { get; set; }
 		public DbSet<IletisimBilgileri> IletisimBilgileris { get; set; }
+
+
+		
 	}
 }
 
