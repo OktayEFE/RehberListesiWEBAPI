@@ -1,9 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace RehberListesiWEBAPI.Models
 {
 	public class IletisimBilgileri
 	{
-		public int ID { get; set; }
+		[Key]
+		public int IletisimID { get; set; }
 		public string TelefonNumarasi { get; set; }
 		public string EmailAdresi { get; set; }
 		public string Adres { get; set; }
