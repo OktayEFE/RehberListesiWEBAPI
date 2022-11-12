@@ -10,7 +10,7 @@ using RehberListesiWEBAPI.Models.Context;
 
 namespace RehberListesiWEBAPI.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("api/[controller]/[action]")]
 	[ApiController]
 	public class IletisimBilgileriController : Controller
     {

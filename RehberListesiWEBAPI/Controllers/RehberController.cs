@@ -13,7 +13,7 @@ using RehberListesiWEBAPI.Models.DTO;
 
 namespace RehberListesiWEBAPI.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("api/[controller]/[action]")]
     [ApiController]
 	public class RehberController : Controller
     {
@@ -25,9 +25,22 @@ namespace RehberListesiWEBAPI.Controllers
 			_context = context;
 			_mapper = mapper;
 		}
-
-		[HttpGet]
-        public IActionResult RehberListesi()
+        [HttpGet("{id}")]//localhost:7241/api/rehber/KisiBilgileri/1
+        public IActionResult KisiBilgileri(int id)
+        {
+			try
+			{
+				List<Rehber> rehbers = _context.Rehbers.Include(x => x.IletisimBilgileris).Where(x=>x.RehberID==id).ToList();
+				return Ok(rehbers);
+			}
+			catch (Exception ex)
+			{
+				return NotFound(ex.Message);
+			}
+			
+        }
+		[HttpGet]// localhost:7241/api/rehbber/RehberListesi
+		public IActionResult RehberListesi()
         {
             try
             {
@@ -41,7 +54,7 @@ namespace RehberListesiWEBAPI.Controllers
             
         }
         //Rehber kayıt işlemi gerçekleşiyor, sadece rehber bilileri geleceği için RehberDTO kullanıldı.
-        [HttpPost]// localhost:7241/api/rehbber
+        [HttpPost]// localhost:7241/api/rehbber/RehberKaydet
 		public IActionResult RehberKaydet([FromBody]RehberDTO rehberDTO)
         {
             try
@@ -58,7 +71,7 @@ namespace RehberListesiWEBAPI.Controllers
             
         }
         //Rehber işlemi güncellemesi
-        [HttpPut("{id}")]//localhost/Rehber/id (rehberDTO body içerisinde gelecektir.)
+        [HttpPut("{id}")]//localhost/Rehber/RehberGuncelle/1 (rehberDTO body içerisinde gelecektir.)
         public IActionResult RehberGuncelleme(int id, RehberDTO rehberDto)
         {
             try
@@ -77,8 +90,8 @@ namespace RehberListesiWEBAPI.Controllers
             
 
         }
-        [HttpDelete("{id}")]
-        public IActionResult RehberSil(int id)
+        [HttpDelete("{id}")]//localhost/Rehber/RehberSil/1 
+		public IActionResult RehberSil(int id)
         {
             try
             {
