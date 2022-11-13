@@ -30,7 +30,8 @@ namespace RehberListesiWEBAPI.Controllers
 			_context = context;
 			_mapper = mapper;
 		}
-        [HttpGet("{id}")]//localhost:7241/api/rehber/KisiBilgileri/1
+
+		[HttpGet("{id}")]//localhost:7241/api/rehber/KisiBilgileri/1
         public IActionResult KisiBilgileri(int id)
         {
 			try
