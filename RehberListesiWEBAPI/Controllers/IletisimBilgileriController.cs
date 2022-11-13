@@ -23,6 +23,10 @@ namespace RehberListesiWEBAPI.Controllers
 		[HttpPost]
 		public IActionResult IletisimbilgisiKaydet([FromBody] IletisimBilgileri iletisimBilgileri)
 		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest();
+			}
 			try
 			{
 				_context.IletisimBilgileris.Add(iletisimBilgileri);
@@ -41,6 +45,10 @@ namespace RehberListesiWEBAPI.Controllers
 			try
 			{
 				IletisimBilgileri iletisimBilgileri = _context.IletisimBilgileris.Find(id);
+				if (iletisimBilgileri == null)
+				{
+					return NotFound();
+				}
 				_context.IletisimBilgileris.Remove(iletisimBilgileri);
 				return Ok("Silme İşlemi Tamamlandı");
 			}
