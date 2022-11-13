@@ -10,7 +10,7 @@ O konumda yer alan rehbere kayıtlı telefon numarası sayısı
 verileri alınmaktadır.
 
 Yapılan İşlemler ve İsteklerin Yapılma Şekli
-1- Rehberde Kişi Oluşturma
+- Rehberde Kişi Oluşturma
   url: .../api/Rehber/RehberKaydet
   body: 
         {
