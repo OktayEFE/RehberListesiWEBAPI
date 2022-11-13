@@ -19,18 +19,21 @@ namespace RehberTestNUnit.ControllerTest
 			var context = A.Fake<Context>();
 			var mapper = A.Fake<IMapper>();
 			var rehbers = A.Fake<Rehber>();
+			
 
-			var kisiBilgisi = new RehberController(context,mapper);
+			var kisiBilgisi = new RehberController(context, mapper);
 			var result = kisiBilgisi.KisiBilgileri(5);
-			Assert.AreEqual(rehbers,result);
-			
-			
+			Assert.AreEqual(rehbers, result);
+
+
 		}
 		[Ignore("TestIgnore")]
 		public void TestToIgnore()
 		{
 
 		}
+
+
 		
 	}
 }
