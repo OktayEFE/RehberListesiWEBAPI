@@ -31,6 +31,10 @@ namespace RehberListesiWEBAPI.Controllers
 		public async Task<IActionResult> KonumBilgisi()
 		{
 			var KonumListesi = _context.IletisimBilgileris.GroupBy(x => x.Konum).Select(x => x.Key).ToList();
+			if (KonumListesi == null)
+			{
+				return NotFound();
+			}
 			var sonuc = from item in KonumListesi
 						select new
 						{

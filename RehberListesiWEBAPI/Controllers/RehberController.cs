@@ -36,6 +36,10 @@ namespace RehberListesiWEBAPI.Controllers
 			try
 			{
 				List<Rehber> rehbers = _context.Rehbers.Include(x => x.IletisimBilgileris).Where(x=>x.RehberID==id).ToList();
+				if (rehbers == null)
+				{
+					return NotFound();
+				}
 				return Ok(rehbers);
 			}
 			catch (Exception ex)
@@ -50,6 +54,10 @@ namespace RehberListesiWEBAPI.Controllers
             try
             {
 				List<Rehber> rehbers = _context.Rehbers.Include(x => x.IletisimBilgileris).ToList();
+				if (rehbers == null)
+				{
+					return NotFound();
+				}
 				return Ok(rehbers);
 			}
             catch (Exception ex)
@@ -62,7 +70,11 @@ namespace RehberListesiWEBAPI.Controllers
         [HttpPost]// localhost:7241/api/rehbber/RehberKaydet
 		public IActionResult RehberKaydet([FromBody]RehberDTO rehberDTO)
         {
-            try
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+			try
             {
 				Rehber rehber = _mapper.Map<Rehber>(rehberDTO);
 				_context.Rehbers.Add(rehber);
@@ -101,6 +113,10 @@ namespace RehberListesiWEBAPI.Controllers
             try
             {
 				Rehber rehber = _context.Rehbers.Find(id);
+				if (rehber == null)
+				{
+					return NotFound();
+				}
 				_context.Remove(rehber);
 				_context.SaveChanges();
 				return Ok("Silme İşlemi Başarılı");
