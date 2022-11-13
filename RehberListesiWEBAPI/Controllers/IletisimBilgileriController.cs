@@ -21,7 +21,7 @@ namespace RehberListesiWEBAPI.Controllers
 			_context = context;
 		}
 		[HttpPost]
-		public IActionResult IletisimbilgisiKaydet([FromBody] IletisimBilgileri iletisimBilgileri)
+		public IActionResult IletisimBilgisiKaydet([FromBody] IletisimBilgileri iletisimBilgileri)
 		{
 			if (!ModelState.IsValid)
 			{

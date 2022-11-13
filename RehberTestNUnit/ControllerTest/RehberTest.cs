@@ -1,8 +1,10 @@
 ﻿using System;
 using AutoMapper;
 using FakeItEasy;
+using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 using RehberListesiWEBAPI.Controllers;
+using RehberListesiWEBAPI.Models;
 using RehberListesiWEBAPI.Models.Context;
 
 namespace RehberTestNUnit.ControllerTest
@@ -14,21 +16,24 @@ namespace RehberTestNUnit.ControllerTest
 		[Test]
 		public void TestKisiBilgileri()
 		{
-			//var rehber = new RehberController(_context,_mapper);
 			var context = A.Fake<Context>();
 			var mapper = A.Fake<IMapper>();
+			var rehbers = A.Fake<Rehber>();
+			
 
-			var rehber = new RehberController(context,mapper);
-			var result = rehber.KisiBilgileri(5);
-			Assert.Equals(8,result);
-			
-			
+			var kisiBilgisi = new RehberController(context, mapper);
+			var result = kisiBilgisi.KisiBilgileri(5);
+			Assert.AreEqual(rehbers, result);
+
+
 		}
 		[Ignore("TestIgnore")]
 		public void TestToIgnore()
 		{
 
 		}
+
+
 		
 	}
 }
