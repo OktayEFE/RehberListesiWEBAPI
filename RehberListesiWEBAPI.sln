@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RehberListesiWEBAPI", "Rehb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaporlamaConsumer", "RaporlamaConsumer\RaporlamaConsumer.csproj", "{0709B697-F9E0-4DE6-883F-070530B241E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RehberTestNUnit", "RehberTestNUnit\RehberTestNUnit.csproj", "{D8CF70BB-B860-4170-88E6-3B7962A922FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0709B697-F9E0-4DE6-883F-070530B241E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0709B697-F9E0-4DE6-883F-070530B241E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0709B697-F9E0-4DE6-883F-070530B241E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8CF70BB-B860-4170-88E6-3B7962A922FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8CF70BB-B860-4170-88E6-3B7962A922FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8CF70BB-B860-4170-88E6-3B7962A922FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8CF70BB-B860-4170-88E6-3B7962A922FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
